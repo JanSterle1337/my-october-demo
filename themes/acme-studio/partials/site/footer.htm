@@ -1,0 +1,31 @@
+<footer class="site-footer">
+    <div>
+        <strong>{{ siteSettings.company_name ?: 'Acme Studio' }}</strong>
+
+        {% if siteSettings.tagline %}
+        <p>{{ siteSettings.tagline }}</p>
+        {% endif %}
+
+        {% if siteSettings.address %}
+        <p>{{ siteSettings.address|nl2br }}</p>
+        {% endif %}
+    </div>
+
+    <div>
+        {% if siteSettings.email %}
+        <p>Email: <a href="mailto:{{ siteSettings.email }}">{{ siteSettings.email }}</a></p>
+        {% endif %}
+
+        {% if siteSettings.phone %}
+        <p>Phone: {{ siteSettings.phone }}</p>
+        {% endif %}
+
+        {% if siteSettings.linkedin_url %}
+        <a href="{{ siteSettings.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>
+        {% endif %}
+
+        {% if siteSettings.github_url %}
+        <a href="{{ siteSettings.github_url }}" target="_blank" rel="noopener">GitHub</a>
+        {% endif %}
+    </div>
+</footer>

@@ -1,0 +1,32 @@
+uuid: eca25105-63be-4c1b-b260-ba7111738e48
+handle: Company\Settings
+type: global
+name: Site Settings
+
+
+navigation:
+    label: Site Settings
+    parent: content
+    icon: icon-cog
+    order: 130
+
+fields:
+    company_name:
+        label: Company Name
+        type: text
+        default: Acme Studio
+
+    tagline:
+        label: Tagline
+        type: text
+    email:
+        label: Email
+        type: email
+    phone:
+        label: Phone
+        type: text
+
+    address:
+        label: Address
+        type: textarea
+        size: small

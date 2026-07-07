@@ -1,0 +1,25 @@
+description = "Default layout"
+
+[global siteSettings]
+handle = "Company\Settings"
+==
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ this.page.title }} | Acme Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ 'assets/css/site.css'|theme }}" rel="stylesheet">
+</head>
+<body>
+{% partial 'site/header' %}
+
+<main class="page-content">
+    {% page %}
+</main>
+
+{% partial 'site/footer' siteSettings=siteSettings %}
+
+{% framework extras %}
+</body>
+</html>

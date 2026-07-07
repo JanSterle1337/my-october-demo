@@ -1,0 +1,11 @@
+<article class="service-card">
+    {% if service.icon %}
+        <p class="service-icon">{{ service.icon }}</p>
+    {% endif %}
+
+    <h3>{{ service.title }}</h3>
+
+    {% if service.short_description %}
+        <p>{{ service.short_description }}</p>
+    {% endif %}
+</article>

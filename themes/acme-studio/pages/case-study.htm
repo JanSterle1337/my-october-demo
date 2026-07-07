@@ -1,0 +1,43 @@
+title = "Case Study"
+url = "/case-studies/:slug"
+layout = "default"
+
+[section caseStudy]
+handle = "Company\CaseStudy"
+==
+{% if caseStudy is empty %}
+{% do abort(404) %}
+{% endif %}
+
+<article class="case-study-detail">
+    {% if caseStudy.image %}
+    <img src="{{ caseStudy.image|media }}" alt="{{ caseStudy.title }}">
+    {% endif %}
+
+    <p>{{ caseStudy.industry }}</p>
+    <h1>{{ caseStudy.title }}</h1>
+
+    {% if caseStudy.client_name %}
+    <p><strong>Client:</strong> {{ caseStudy.client_name }}</p>
+    {% endif %}
+
+    {% if caseStudy.summary %}
+    <p>{{ caseStudy.summary }}</p>
+    {% endif %}
+
+    <div>
+        {{ caseStudy.body|raw }}
+    </div>
+
+    {% if caseStudy.service %}
+        <p>
+            Service:
+            <a href="{{ 'service'|page({ slug: caseStudy.service.slug }) }}">
+                {{ caseStudy.service.title }}
+            </a>
+        </p>
+    {% endif %}
+    <p>
+        <a href="{{ 'case-studies'|page }}">Back to case studies</a>
+    </p>
+</article>

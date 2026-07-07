@@ -1,0 +1,52 @@
+uuid: 1a649dee-fb92-49e6-9307-514561a39ee8
+handle: Company\TeamMember
+type: entry
+name: Team Member
+drafts: true
+
+navigation:
+    label: Team Members
+    parent: content
+    icon: icon-users
+    order: 120
+
+fields:
+    title:
+        label: Name
+        type: text
+
+    slug:
+        label: Slug
+        type: text
+        preset:
+            field: name
+            type: slug
+
+    role:
+        label: Role
+        type: text
+
+    bio:
+        label: Bio
+        type: textarea
+        size: large
+    photo:
+        label: Photo
+        type: mediafinder
+        mode: image
+    email:
+        label: Email
+        type: email
+    linkedin_url:
+        label: LinkedIn URL
+        type: text
+    github_url:
+        label: GitHub URL
+        type: text
+    featured:
+        label: Featured on homepage
+        type: switch
+    sort_order:
+        label: Sort Order
+        type: number
+        default: 100

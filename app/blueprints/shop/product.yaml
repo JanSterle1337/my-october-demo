@@ -1,0 +1,35 @@
+uuid: 080760c9-1f1f-4efa-bfd2-5f6c8e8ac4ac
+handle: Shop\Product
+type: entry
+name: Product
+drafts: true
+
+navigation:
+    label: Products
+    parent: content
+    icon: icon-shopping-cart
+    order: 100
+
+fields:
+    title:
+        label: Product name
+        type: text
+
+    slug:
+        label: Slug
+        type: text
+        preset:
+            field: title
+            type: slug
+
+    price:
+        label: Price
+        type: number
+
+    description:
+        label: Description
+        type: textarea
+    image:
+        label: Image
+        type: mediafinder
+        mode: image

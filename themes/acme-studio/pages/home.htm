@@ -1,0 +1,71 @@
+title = "Home"
+url = "/"
+layout = "default"
+
+[global siteSettings]
+handle = "Company\Settings"
+
+[collection services]
+handle = "Company\Service"
+
+[collection featuredCaseStudies]
+handle = "Company\CaseStudy"
+scope = "featured"
+
+[collection featuredTeam]
+handle = "Company\TeamMember"
+scope = "featured"
+==
+<section class="hero">
+    <h1>{{ siteSettings.tagline ?: 'Websites and Laravel-powered digital products.' }}</h1>
+    <p>{{ siteSettings.company_name ?: 'Acme Studio' }} helps companies build maintainable CMS-driven websites.</p>
+
+    <p>
+        <a href="{{ 'services'|page }}">View services</a>
+        <a href="{{ 'contact'|page }}">Start a project</a>
+    </p>
+</section>
+
+<section>
+    <h2>Services</h2>
+    <div class="service-grid">
+        {% for service in services|slice(0, 3) %}
+        <article class="service-card">
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.short_description }}</p>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+<section>
+    <h2>Featured Case Studies</h2>
+    <div class="case-study-grid">
+        {% for caseStudy in featuredCaseStudies|slice(0, 3) %}
+        <article class="case-study-card">
+            <h3>{{ caseStudy.title }}</h3>
+            <p>{{ caseStudy.summary }}</p>
+            <a href="{{ 'case-study'|page({ slug: caseStudy.slug }) }}">Read more</a>
+        </article>
+        {% else %}
+        <p>No featured case studies yet.</p>
+        {% endfor %}
+    </div>
+</section>
+
+<section>
+    <h2>Featured Team</h2>
+    <div class="team-grid">
+        {% for member in featuredTeam|slice(0, 3) %}
+        <article class="team-card">
+            {% if member.photo %}
+            <img src="{{ member.photo|media }}" alt="{{ member.title }}">
+            {% endif %}
+            <h3>{{ member.title }}</h3>
+            <p>{{ member.role }}</p>
+        </article>
+        {% else %}
+        <p>No featured team members yet.</p>
+        {% endfor %}
+    </div>
+</section>

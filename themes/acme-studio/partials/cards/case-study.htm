@@ -1,0 +1,27 @@
+<article class="case-study-card">
+    {% if caseStudy.image %}
+    <img src="{{ caseStudy.image|media }}" alt="{{ caseStudy.title }}">
+    {% endif %}
+
+    <p>{{ caseStudy.industry }}</p>
+    <h2>{{ caseStudy.title }}</h2>
+
+    {% if caseStudy.client_name %}
+        <p>Client: {{ caseStudy.client_name }}</p>
+    {% endif %}
+
+    <p>{{ caseStudy.summary }}</p>
+
+    {% if caseStudy.service %}
+        <p>
+            <strong>Service:</strong>
+            <a href="{{ 'service'|page({ slug: caseStudy.service.slug }) }}">
+                {{ caseStudy.service.title }}
+            </a>
+        </p>
+    {% endif %}
+
+    <a href="{{ 'case-study'|page({ slug: caseStudy.slug }) }}">
+        Read case study
+    </a>
+</article>

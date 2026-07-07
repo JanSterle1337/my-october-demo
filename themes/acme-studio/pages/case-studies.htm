@@ -1,0 +1,19 @@
+title = "Case Studies"
+url = "/case-studies"
+layout = "default"
+
+[collection caseStudies]
+handle = "Company\CaseStudy"
+==
+<section>
+    <h1>Case Studies</h1>
+    <p>Real project examples managed from the OctoberCMS backend.</p>
+</section>
+
+<section class="case-study-grid">
+    {% for caseStudy in caseStudies %}
+        {% partial 'cards/case-study' caseStudy=caseStudy %}
+    {% else %}
+    <p>No case studies have been added yet.</p>
+    {% endfor %}
+</section>

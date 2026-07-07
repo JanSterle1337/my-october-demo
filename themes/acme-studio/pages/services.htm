@@ -1,0 +1,19 @@
+title = "Services"
+url = "/services"
+layout = "default"
+
+[collection services]
+handle = "Company\Service"
+==
+<section>
+    <h1>Services</h1>
+    <p>These services are managed from the OctoberCMS backend.</p>
+</section>
+
+<section class="service-grid">
+    {% for service in services %}
+        {% partial 'cards/service' service=service %}
+    {% else %}
+    <p>No services have been added yet.</p>
+    {% endfor %}
+</section>

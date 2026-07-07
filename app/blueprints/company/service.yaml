@@ -1,0 +1,37 @@
+uuid: ea5a7012-f4d1-43f5-8dac-266a8e36b847
+handle: Company\Service
+type: entry
+name: Service
+drafts: true
+
+navigation:
+    label: Services
+    parent: content
+    icon: icon-briefcase
+    order: 100
+
+fields:
+    title:
+        label: Service Name
+        type: text
+
+    slug:
+        label: Slug
+        type: text
+        preset:
+            field: title
+            type: slug
+
+    short_description:
+        label: Short Description
+        type: textarea
+        size: small
+
+    full_description:
+        label: Full Description
+        type: richeditor
+
+    icon:
+        label: Icon
+        type: text
+        comment: code, cloud, chart-line

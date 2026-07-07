@@ -1,0 +1,55 @@
+uuid: c652111b-0aa1-4938-b93a-b98728f76e58
+handle: Company\CaseStudy
+type: entry
+name: Case Study
+drafts: true
+
+navigation:
+    label: Case Studies
+    parent: content
+    icon: icon-folder-open
+    order: 110
+
+fields:
+    title:
+        label: Title
+        type: text
+
+    slug:
+        label: Slug
+        type: text
+        preset:
+            field: title
+            type: slug
+
+    client_name:
+        label: Client Name
+        type: text
+
+    industry:
+        label: Industry
+        type: text
+
+    summary:
+        label: Summary
+        type: textarea
+        size: small
+
+    body:
+        label: Body
+        type: richeditor
+
+    image:
+        label: Image
+        type: mediafinder
+        mode: image
+
+    featured:
+        label: Featured
+        type: switch
+
+    service:
+        label: Service
+        type: entries
+        source: Company\Service
+        maxItems: 1
